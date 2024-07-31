@@ -1,0 +1,74 @@
+{
+	"info": {
+		"_postman_id": "e3a1e292-4dda-4e95-a56c-17f40ffe2387",
+		"name": "DCE",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22083630"
+	},
+	"item": [
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"customerId\":\"53f7b8bd-7a92-405f-b168-3f55ee83f49f\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44315/api/CustomerAPI/api/v1/DeleteCustomer",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44315",
+					"path": [
+						"api",
+						"CustomerAPI",
+						"api",
+						"v1",
+						"DeleteCustomer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}

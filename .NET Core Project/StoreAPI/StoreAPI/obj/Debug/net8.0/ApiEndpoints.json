@@ -1,0 +1,174 @@
+[
+  {
+    "ContainingType": "StoreAPI.Controllers.CustomerAPIController",
+    "Method": "CreateCustomer",
+    "RelativePath": "api/CustomerAPI/api/v1/CreateCustomer",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "customer",
+        "Type": "StoreAPICore.Domain.InputCustomer",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "StoreAPI.Controllers.CustomerAPIController",
+    "Method": "DeleteCustomer",
+    "RelativePath": "api/CustomerAPI/api/v1/DeleteCustomer",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "customerId",
+        "Type": "System.Guid",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "StoreAPI.Controllers.CustomerAPIController",
+    "Method": "GetAllCustomer",
+    "RelativePath": "api/CustomerAPI/api/v1/GetAllCustomer",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[StoreAPICore.Domain.Customer, StoreAPICore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "StoreAPI.Controllers.CustomerAPIController",
+    "Method": "UpdateCustomer",
+    "RelativePath": "api/CustomerAPI/api/v1/UpdateCustomer",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "customer",
+        "Type": "StoreAPICore.Domain.Customer",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "StoreAPI.Controllers.OrderAPIController",
+    "Method": "ActiveOrdersByCustomer",
+    "RelativePath": "api/OrderAPI/api/v1/ActiveOrdersByCustomer",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "customerId",
+        "Type": "System.Guid",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.String",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "StoreAPI.Controllers.OrderAPIController",
+    "Method": "InsertOrder",
+    "RelativePath": "api/OrderAPI/api/v1/InsertOrder",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "order",
+        "Type": "StoreAPICore.Domain.InputOrder",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.String",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "StoreAPI.Controllers.ProductAPIController",
+    "Method": "InsertProduct",
+    "RelativePath": "api/ProductAPI/api/v1/InsertProduct",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "product",
+        "Type": "StoreAPICore.Domain.InputProduct",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "StoreAPI.Controllers.SupplierAPIController",
+    "Method": "CreateSupplier",
+    "RelativePath": "api/SupplierAPI/api/v1/CreateSupplier",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "supplier",
+        "Type": "StoreAPICore.Domain.InputSupplier",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "StoreAPI.Controllers.WeatherForecastController",
+    "Method": "Get",
+    "RelativePath": "WeatherForecast",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[StoreAPI.WeatherForecast, StoreAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  }
+]

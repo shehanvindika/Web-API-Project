@@ -1,0 +1,12 @@
+C:\Users\Administrator\Desktop\Data Capture Expert\Assessment\StoreAPICore\bin\Debug\net8.0\StoreAPICore.deps.json
+C:\Users\Administrator\Desktop\Data Capture Expert\Assessment\StoreAPICore\bin\Debug\net8.0\StoreAPICore.dll
+C:\Users\Administrator\Desktop\Data Capture Expert\Assessment\StoreAPICore\bin\Debug\net8.0\StoreAPICore.pdb
+C:\Users\Administrator\Desktop\Data Capture Expert\Assessment\StoreAPICore\obj\Debug\net8.0\StoreAPICore.csproj.AssemblyReference.cache
+C:\Users\Administrator\Desktop\Data Capture Expert\Assessment\StoreAPICore\obj\Debug\net8.0\StoreAPICore.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Administrator\Desktop\Data Capture Expert\Assessment\StoreAPICore\obj\Debug\net8.0\StoreAPICore.AssemblyInfoInputs.cache
+C:\Users\Administrator\Desktop\Data Capture Expert\Assessment\StoreAPICore\obj\Debug\net8.0\StoreAPICore.AssemblyInfo.cs
+C:\Users\Administrator\Desktop\Data Capture Expert\Assessment\StoreAPICore\obj\Debug\net8.0\StoreAPICore.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Desktop\Data Capture Expert\Assessment\StoreAPICore\obj\Debug\net8.0\StoreAPICore.dll
+C:\Users\Administrator\Desktop\Data Capture Expert\Assessment\StoreAPICore\obj\Debug\net8.0\refint\StoreAPICore.dll
+C:\Users\Administrator\Desktop\Data Capture Expert\Assessment\StoreAPICore\obj\Debug\net8.0\StoreAPICore.pdb
+C:\Users\Administrator\Desktop\Data Capture Expert\Assessment\StoreAPICore\obj\Debug\net8.0\ref\StoreAPICore.dll
