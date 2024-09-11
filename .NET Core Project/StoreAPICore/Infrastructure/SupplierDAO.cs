@@ -12,7 +12,8 @@ namespace StoreAPICore.Infrastructure
     public interface SupplierDAO
     {
         void CreateSupplier(Supplier supplier,DBConnection dBConnection);
-        bool SupplierExists(Guid SupplierId, DBConnection dBConnection);
+        bool SupplierExistsById(Guid SupplierId, DBConnection dBConnection);
+        bool SupplierExistsByName(string SupplierName, DBConnection dBConnection);
     }
 
     public class SupplierDAOImpl : SupplierDAO
@@ -29,12 +30,31 @@ namespace StoreAPICore.Infrastructure
             dBConnection.cmd.ExecuteNonQuery();
         }
 
-        public bool SupplierExists(Guid SupplierId, DBConnection dBConnection)
+        public bool SupplierExistsById(Guid SupplierId, DBConnection dBConnection)
         {
             bool IsExists = false;
             dBConnection.cmd.Parameters.Clear();
             dBConnection.cmd.CommandType = CommandType.Text;
             dBConnection.cmd.CommandText = "select * from Supplier where SupplierId='" + SupplierId + "'";
+            dBConnection.dr = dBConnection.cmd.ExecuteReader();
+
+            while (dBConnection.dr.Read())
+            {
+                if (dBConnection.dr.HasRows)
+                {
+                    IsExists = true;
+                }
+            }
+
+            dBConnection.dr.Close();
+            return IsExists;
+        }
+        public bool SupplierExistsByName(string SupplierName, DBConnection dBConnection)
+        {
+            bool IsExists = false;
+            dBConnection.cmd.Parameters.Clear();
+            dBConnection.cmd.CommandType = CommandType.Text;
+            dBConnection.cmd.CommandText = "select * from Supplier where SupplierName='" + SupplierName + "'";
             dBConnection.dr = dBConnection.cmd.ExecuteReader();
 
             while (dBConnection.dr.Read())

@@ -16,6 +16,7 @@ namespace StoreAPICore.Infrastructure
     {
         void InsertOrder(Order order,DBConnection dBConnection);
         DataTable GetActiveOrdersByCustomer(Guid CustomerId, DBConnection dBConnection);
+        bool OrderExists(Order order, DBConnection dBConnection);
     }
 
     public class OrderDAOImpl : OrderDAO
@@ -86,6 +87,32 @@ namespace StoreAPICore.Infrastructure
 
             dBConnection.dr.Close();
             return data;
+        }
+
+        public bool OrderExists(Order order, DBConnection dBConnection)
+        {
+            bool IsExists = false;
+            dBConnection.cmd.Parameters.Clear();
+            dBConnection.cmd.CommandType = CommandType.Text;
+            dBConnection.cmd.CommandText = "select * from OrderTable where ProductId=@ProductId and OrderStatus=@OrderStatus and OrderType=@OrderType and OrderBy=@OrderBy  and IsActive=@IsActive";
+            dBConnection.cmd.Parameters.AddWithValue("@OrderId", order.OrderId);
+            dBConnection.cmd.Parameters.AddWithValue("@ProductId", order.ProductId);
+            dBConnection.cmd.Parameters.AddWithValue("@OrderStatus", order.OrderStatus);
+            dBConnection.cmd.Parameters.AddWithValue("@OrderType", order.OrderType);
+            dBConnection.cmd.Parameters.AddWithValue("@OrderBy", order.OrderBy);
+            dBConnection.cmd.Parameters.AddWithValue("@IsActive", order.IsActive);
+            dBConnection.dr = dBConnection.cmd.ExecuteReader();
+
+            while (dBConnection.dr.Read())
+            {
+                if (dBConnection.dr.HasRows)
+                {
+                    IsExists = true;
+                }
+            }
+
+            dBConnection.dr.Close();
+            return IsExists;
         }
     }
 }

@@ -4,6 +4,7 @@ using StoreAPICore.Common;
 using StoreAPICore.Controller;
 using StoreAPICore.Domain;
 using System.Data;
+using System.Web.Http.Results;
 
 namespace StoreAPI.Controllers
 {
@@ -11,22 +12,38 @@ namespace StoreAPI.Controllers
     [ApiController]
     public class OrderAPIController : ControllerBase
     {
-        [Route("api/v1/InsertOrder")]
+        [Route("v1/InsertOrder")]
         [HttpPost]
 
-        public string InsertOrder([FromBody] InputOrder order)
+        public IActionResult InsertOrder([FromBody] InputOrder order)
         {
             OrderController orderController = ControllerFactory.CreateOrderController();
-            return orderController.InsertOrderDetails(order);
+            var result = orderController.InsertOrderDetails(order);
+            return Ok(new { message = result });
         }
 
-        [Route("api/v1/ActiveOrdersByCustomer")]
+        [Route("v1/ActiveOrdersByCustomer")]
         [HttpGet]
-
-        public string ActiveOrdersByCustomer(Guid customerId)
+        public IActionResult ActiveOrdersByCustomer(Guid customerId)
         {
             OrderController orderController = ControllerFactory.CreateOrderController();
-            return JsonConvert.SerializeObject(orderController.GetActiveOrdersByCustomers(customerId));
+
+            DataTable activeOrders = orderController.GetActiveOrdersByCustomers(customerId);
+
+            // Convert DataTable to a List of Dictionary<string, object>
+            var ordersList = new List<Dictionary<string, object>>();
+
+            foreach (DataRow row in activeOrders.Rows)
+            {
+                var rowDict = new Dictionary<string, object>();
+                foreach (DataColumn column in activeOrders.Columns)
+                {
+                    rowDict[column.ColumnName] = row[column];
+                }
+                ordersList.Add(rowDict);
+            }
+
+            return Ok(ordersList);
         }
 
 

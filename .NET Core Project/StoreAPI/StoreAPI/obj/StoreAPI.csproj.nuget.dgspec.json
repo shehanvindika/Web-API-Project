@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Administrator\\Desktop\\Data Capture Expert\\Assessment\\StoreAPI\\StoreAPI\\StoreAPI.csproj": {}
+    "C:\\Users\\Administrator\\Desktop\\New folder (2)\\Web-API-Project\\.NET Core Project\\StoreAPI\\StoreAPI\\StoreAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Administrator\\Desktop\\Data Capture Expert\\Assessment\\StoreAPICore\\StoreAPICore.csproj": {
+    "C:\\Users\\Administrator\\Desktop\\New folder (2)\\Web-API-Project\\.NET Core Project\\StoreAPICore\\StoreAPICore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Administrator\\Desktop\\Data Capture Expert\\Assessment\\StoreAPICore\\StoreAPICore.csproj",
+        "projectUniqueName": "C:\\Users\\Administrator\\Desktop\\New folder (2)\\Web-API-Project\\.NET Core Project\\StoreAPICore\\StoreAPICore.csproj",
         "projectName": "StoreAPICore",
-        "projectPath": "C:\\Users\\Administrator\\Desktop\\Data Capture Expert\\Assessment\\StoreAPICore\\StoreAPICore.csproj",
+        "projectPath": "C:\\Users\\Administrator\\Desktop\\New folder (2)\\Web-API-Project\\.NET Core Project\\StoreAPICore\\StoreAPICore.csproj",
         "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Administrator\\Desktop\\Data Capture Expert\\Assessment\\StoreAPICore\\obj\\",
+        "outputPath": "C:\\Users\\Administrator\\Desktop\\New folder (2)\\Web-API-Project\\.NET Core Project\\StoreAPICore\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -74,14 +74,14 @@
         }
       }
     },
-    "C:\\Users\\Administrator\\Desktop\\Data Capture Expert\\Assessment\\StoreAPI\\StoreAPI\\StoreAPI.csproj": {
+    "C:\\Users\\Administrator\\Desktop\\New folder (2)\\Web-API-Project\\.NET Core Project\\StoreAPI\\StoreAPI\\StoreAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Administrator\\Desktop\\Data Capture Expert\\Assessment\\StoreAPI\\StoreAPI\\StoreAPI.csproj",
+        "projectUniqueName": "C:\\Users\\Administrator\\Desktop\\New folder (2)\\Web-API-Project\\.NET Core Project\\StoreAPI\\StoreAPI\\StoreAPI.csproj",
         "projectName": "StoreAPI",
-        "projectPath": "C:\\Users\\Administrator\\Desktop\\Data Capture Expert\\Assessment\\StoreAPI\\StoreAPI\\StoreAPI.csproj",
+        "projectPath": "C:\\Users\\Administrator\\Desktop\\New folder (2)\\Web-API-Project\\.NET Core Project\\StoreAPI\\StoreAPI\\StoreAPI.csproj",
         "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Administrator\\Desktop\\Data Capture Expert\\Assessment\\StoreAPI\\StoreAPI\\obj\\",
+        "outputPath": "C:\\Users\\Administrator\\Desktop\\New folder (2)\\Web-API-Project\\.NET Core Project\\StoreAPI\\StoreAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -102,8 +102,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\Administrator\\Desktop\\Data Capture Expert\\Assessment\\StoreAPICore\\StoreAPICore.csproj": {
-                "projectPath": "C:\\Users\\Administrator\\Desktop\\Data Capture Expert\\Assessment\\StoreAPICore\\StoreAPICore.csproj"
+              "C:\\Users\\Administrator\\Desktop\\New folder (2)\\Web-API-Project\\.NET Core Project\\StoreAPICore\\StoreAPICore.csproj": {
+                "projectPath": "C:\\Users\\Administrator\\Desktop\\New folder (2)\\Web-API-Project\\.NET Core Project\\StoreAPICore\\StoreAPICore.csproj"
               }
             }
           }
@@ -126,6 +126,10 @@
             "Microsoft.AspNet.WebApi.Core": {
               "target": "Package",
               "version": "[5.3.0, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",

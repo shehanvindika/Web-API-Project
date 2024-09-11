@@ -10,13 +10,14 @@ namespace StoreAPI.Controllers
     [ApiController]
     public class ProductAPIController : ControllerBase
     {
-        [Route("api/v1/InsertProduct")]
+        [Route("v1/InsertProduct")]
         [HttpPost]
 
         public IActionResult InsertProduct([FromBody] InputProduct product)
         {
             ProductController productController = ControllerFactory.CreateProductController();
-            return Ok(productController.InsertProduct(product));
+            var result = productController.InsertProduct(product);
+            return Ok(new { message = result });
         }
     }
 }

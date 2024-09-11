@@ -1,10 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 using StoreAPICore.Common;
 using StoreAPICore.Controller;
+using StoreAPICore.Controllers;
 using StoreAPICore.Domain;
 using System.Data;
-using System.Numerics;
-using System.Web.Http.Results;
+
 
 
 namespace StoreAPI.Controllers
@@ -13,40 +14,57 @@ namespace StoreAPI.Controllers
     [ApiController]
     public class CustomerAPIController : ControllerBase
     {
-        [Route("api/v1/CreateCustomer")]
+        [Route("v1/CreateCustomer")]
         [HttpPost]
         
         public IActionResult CreateCustomer([FromBody] InputCustomer customer)
         {
             CustomerController customerController = ControllerFactory.CreateCustomerController();
-            return Ok(customerController.CreateCustomer(customer));
+            var msg = customerController.CreateCustomer(customer);
+            return Ok(new { message = msg });
         }
 
-        [Route("api/v1/GetAllCustomer")]
+        [Route("v1/GetAllCustomer")]
         [HttpGet]
 
-        public List<Customer> GetAllCustomer()
+        public IActionResult GetAllCustomer()
         {
             CustomerController customerController = ControllerFactory.CreateCustomerController();
-            return customerController.GetAllCustomers();
+            DataTable CustomerList = customerController.GetAllCustomers();
+
+            // Convert DataTable to a List of Dictionary<string, object>
+            var ordersList = new List<Dictionary<string, object>>();
+
+            foreach (DataRow row in CustomerList.Rows)
+            {
+                var rowDict = new Dictionary<string, object>();
+                foreach (DataColumn column in CustomerList.Columns)
+                {
+                    rowDict[column.ColumnName] = row[column];
+                }
+                ordersList.Add(rowDict);
+            }
+            return Ok(ordersList);
         }
 
-        [Route("api/v1/UpdateCustomer")]
+        [Route("v1/UpdateCustomer")]
         [HttpPost]
 
         public IActionResult UpdateCustomer([FromBody] Customer customer)
         {
             CustomerController customerController = ControllerFactory.CreateCustomerController();
-            return Ok(customerController.UpdateCustomer(customer));
+            var result = customerController.UpdateCustomer(customer);
+            return Ok(new { message = result });
         }
 
-        [Route("api/v1/DeleteCustomer")]
+        [Route("v1/DeleteCustomer")]
         [HttpDelete]
 
         public IActionResult DeleteCustomer(Guid customerId)
         {
             CustomerController customerController = ControllerFactory.CreateCustomerController();
-            return Ok(customerController.DeleteCustomer(customerId));
+            var result = customerController.DeleteCustomer(customerId);
+            return Ok(new { message = result });
         }
 
         

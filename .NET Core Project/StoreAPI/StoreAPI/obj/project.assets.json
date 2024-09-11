@@ -97,15 +97,15 @@
           }
         }
       },
-      "Newtonsoft.Json/13.0.1": {
+      "Newtonsoft.Json/13.0.3": {
         "type": "package",
         "compile": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
             "related": ".xml"
           }
         }
@@ -679,14 +679,15 @@
         "version.txt"
       ]
     },
-    "Newtonsoft.Json/13.0.1": {
-      "sha512": "ppPFpBcvxdsfUonNcvITKqLl3bqxWbDCZIzDWHzjpdAHRFfZe0Dw9HmA0+za13IdyrgJwpkDTDA9fHaxOrt20A==",
+    "Newtonsoft.Json/13.0.3": {
+      "sha512": "HrC5BXdl00IP9zeV+0Z848QWPAoCr9P3bDEZguI+gkLcBKAOxix/tLEAAHC+UvDNPv4a2d18lOReHMOagPa+zQ==",
       "type": "package",
-      "path": "newtonsoft.json/13.0.1",
+      "path": "newtonsoft.json/13.0.3",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "LICENSE.md",
+        "README.md",
         "lib/net20/Newtonsoft.Json.dll",
         "lib/net20/Newtonsoft.Json.xml",
         "lib/net35/Newtonsoft.Json.dll",
@@ -695,13 +696,15 @@
         "lib/net40/Newtonsoft.Json.xml",
         "lib/net45/Newtonsoft.Json.dll",
         "lib/net45/Newtonsoft.Json.xml",
+        "lib/net6.0/Newtonsoft.Json.dll",
+        "lib/net6.0/Newtonsoft.Json.xml",
         "lib/netstandard1.0/Newtonsoft.Json.dll",
         "lib/netstandard1.0/Newtonsoft.Json.xml",
         "lib/netstandard1.3/Newtonsoft.Json.dll",
         "lib/netstandard1.3/Newtonsoft.Json.xml",
         "lib/netstandard2.0/Newtonsoft.Json.dll",
         "lib/netstandard2.0/Newtonsoft.Json.xml",
-        "newtonsoft.json.13.0.1.nupkg.sha512",
+        "newtonsoft.json.13.0.3.nupkg.sha512",
         "newtonsoft.json.nuspec",
         "packageIcon.png"
       ]
@@ -1126,6 +1129,7 @@
   "projectFileDependencyGroups": {
     "net8.0": [
       "Microsoft.AspNet.WebApi.Core >= 5.3.0",
+      "Newtonsoft.Json >= 13.0.3",
       "StoreAPICore >= 1.0.0",
       "Swashbuckle.AspNetCore >= 6.4.0"
     ]
@@ -1137,11 +1141,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Administrator\\Desktop\\Data Capture Expert\\Assessment\\StoreAPI\\StoreAPI\\StoreAPI.csproj",
+      "projectUniqueName": "C:\\Users\\Administrator\\Desktop\\New folder (2)\\Web-API-Project\\.NET Core Project\\StoreAPI\\StoreAPI\\StoreAPI.csproj",
       "projectName": "StoreAPI",
-      "projectPath": "C:\\Users\\Administrator\\Desktop\\Data Capture Expert\\Assessment\\StoreAPI\\StoreAPI\\StoreAPI.csproj",
+      "projectPath": "C:\\Users\\Administrator\\Desktop\\New folder (2)\\Web-API-Project\\.NET Core Project\\StoreAPI\\StoreAPI\\StoreAPI.csproj",
       "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Administrator\\Desktop\\Data Capture Expert\\Assessment\\StoreAPI\\StoreAPI\\obj\\",
+      "outputPath": "C:\\Users\\Administrator\\Desktop\\New folder (2)\\Web-API-Project\\.NET Core Project\\StoreAPI\\StoreAPI\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -1162,8 +1166,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\Administrator\\Desktop\\Data Capture Expert\\Assessment\\StoreAPICore\\StoreAPICore.csproj": {
-              "projectPath": "C:\\Users\\Administrator\\Desktop\\Data Capture Expert\\Assessment\\StoreAPICore\\StoreAPICore.csproj"
+            "C:\\Users\\Administrator\\Desktop\\New folder (2)\\Web-API-Project\\.NET Core Project\\StoreAPICore\\StoreAPICore.csproj": {
+              "projectPath": "C:\\Users\\Administrator\\Desktop\\New folder (2)\\Web-API-Project\\.NET Core Project\\StoreAPICore\\StoreAPICore.csproj"
             }
           }
         }
@@ -1186,6 +1190,10 @@
           "Microsoft.AspNet.WebApi.Core": {
             "target": "Package",
             "version": "[5.3.0, )"
+          },
+          "Newtonsoft.Json": {
+            "target": "Package",
+            "version": "[13.0.3, )"
           },
           "Swashbuckle.AspNetCore": {
             "target": "Package",

@@ -30,24 +30,31 @@ namespace StoreAPICore.Controller
 
                 Guid prdId = Guid.NewGuid();
 
-                if (supplierDAO.SupplierExists(product.SupplierId, conn) && product.SupplierId.ToString().Length == 36)
+                if (productDAO.ProductExists(product.ProductName,product.SupplierId,conn))
                 {
-                    Product item = new Product();
-                    item.ProductId = prdId;
-                    item.ProductName = product.ProductName;
-                    item.UnitPrice = product.UnitPrice;
-                    item.SupplierId = product.SupplierId;
-                    item.CreatedOn = DateTime.Now;
-                    item.IsActive = true;
-                    productDAO.InsertProduct(item, conn);
-
-                    message = "Product inserted Successfully.Product Id is " + prdId;
+                    message = "Product is already inserted .";
                 }
                 else
                 {
-                    message = "Please Check Supplier Id.";
+                    if (supplierDAO.SupplierExistsById(product.SupplierId, conn) && product.SupplierId.ToString().Length == 36)
+                    {
+                        Product item = new Product();
+                        item.ProductId = prdId;
+                        item.ProductName = product.ProductName;
+                        item.UnitPrice = product.UnitPrice;
+                        item.SupplierId = product.SupplierId;
+                        item.CreatedOn = DateTime.Now;
+                        item.IsActive = true;
+                        productDAO.InsertProduct(item, conn);
+
+                        message = "Product inserted Successfully.Product Id is " + prdId;
+                    }
+                    else
+                    {
+                        message = "Please Check Supplier Id.";
+                    }
                 }
-                
+  
                 return message;
             }
             catch (Exception exp)

@@ -20,16 +20,24 @@ namespace StoreAPICore.Controllers
             {
                 conn = new DBConnection();
 
-                Guid cusId = Guid.NewGuid();
+                if (supplierDAO.SupplierExistsByName(supplier.SupplierName, conn))
+                {
+                    message = "Supplier name already exists..";
+                }
+                else
+                {
+                    Guid cusId = Guid.NewGuid();
 
-                Supplier user = new Supplier();
-                user.SupplierId = cusId;
-                user.SupplierName= supplier.SupplierName;
-                user.CreatedOn = DateTime.Now;
-                user.IsActive = true;
-                supplierDAO.CreateSupplier(user, conn);
+                    Supplier user = new Supplier();
+                    user.SupplierId = cusId;
+                    user.SupplierName = supplier.SupplierName;
+                    user.CreatedOn = DateTime.Now;
+                    user.IsActive = true;
+                    supplierDAO.CreateSupplier(user, conn);
 
-                message = "Supplier Account Created Successfully.Your Supplier Id is " + cusId;
+                    message = "Supplier Account Created Successfully.Your Supplier Id is " + cusId;
+                }
+                
                 return message;
             }
             catch (Exception exp)

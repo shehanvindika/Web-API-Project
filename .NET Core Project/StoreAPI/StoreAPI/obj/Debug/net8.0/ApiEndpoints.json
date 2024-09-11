@@ -2,7 +2,7 @@
   {
     "ContainingType": "StoreAPI.Controllers.CustomerAPIController",
     "Method": "CreateCustomer",
-    "RelativePath": "api/CustomerAPI/api/v1/CreateCustomer",
+    "RelativePath": "api/CustomerAPI/v1/CreateCustomer",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -18,7 +18,7 @@
   {
     "ContainingType": "StoreAPI.Controllers.CustomerAPIController",
     "Method": "DeleteCustomer",
-    "RelativePath": "api/CustomerAPI/api/v1/DeleteCustomer",
+    "RelativePath": "api/CustomerAPI/v1/DeleteCustomer",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -34,27 +34,17 @@
   {
     "ContainingType": "StoreAPI.Controllers.CustomerAPIController",
     "Method": "GetAllCustomer",
-    "RelativePath": "api/CustomerAPI/api/v1/GetAllCustomer",
+    "RelativePath": "api/CustomerAPI/v1/GetAllCustomer",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [],
-    "ReturnTypes": [
-      {
-        "Type": "System.Collections.Generic.List\u00601[[StoreAPICore.Domain.Customer, StoreAPICore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
+    "ReturnTypes": []
   },
   {
     "ContainingType": "StoreAPI.Controllers.CustomerAPIController",
     "Method": "UpdateCustomer",
-    "RelativePath": "api/CustomerAPI/api/v1/UpdateCustomer",
+    "RelativePath": "api/CustomerAPI/v1/UpdateCustomer",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -70,7 +60,7 @@
   {
     "ContainingType": "StoreAPI.Controllers.OrderAPIController",
     "Method": "ActiveOrdersByCustomer",
-    "RelativePath": "api/OrderAPI/api/v1/ActiveOrdersByCustomer",
+    "RelativePath": "api/OrderAPI/v1/ActiveOrdersByCustomer",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -81,22 +71,12 @@
         "IsRequired": false
       }
     ],
-    "ReturnTypes": [
-      {
-        "Type": "System.String",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
+    "ReturnTypes": []
   },
   {
     "ContainingType": "StoreAPI.Controllers.OrderAPIController",
     "Method": "InsertOrder",
-    "RelativePath": "api/OrderAPI/api/v1/InsertOrder",
+    "RelativePath": "api/OrderAPI/v1/InsertOrder",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -107,22 +87,12 @@
         "IsRequired": true
       }
     ],
-    "ReturnTypes": [
-      {
-        "Type": "System.String",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
+    "ReturnTypes": []
   },
   {
     "ContainingType": "StoreAPI.Controllers.ProductAPIController",
     "Method": "InsertProduct",
-    "RelativePath": "api/ProductAPI/api/v1/InsertProduct",
+    "RelativePath": "api/ProductAPI/v1/InsertProduct",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -138,7 +108,7 @@
   {
     "ContainingType": "StoreAPI.Controllers.SupplierAPIController",
     "Method": "CreateSupplier",
-    "RelativePath": "api/SupplierAPI/api/v1/CreateSupplier",
+    "RelativePath": "api/SupplierAPI/v1/CreateSupplier",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -150,25 +120,5 @@
       }
     ],
     "ReturnTypes": []
-  },
-  {
-    "ContainingType": "StoreAPI.Controllers.WeatherForecastController",
-    "Method": "Get",
-    "RelativePath": "WeatherForecast",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": [
-      {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[StoreAPI.WeatherForecast, StoreAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
   }
 ]

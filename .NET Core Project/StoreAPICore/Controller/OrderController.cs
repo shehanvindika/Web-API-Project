@@ -32,34 +32,44 @@ namespace StoreAPICore.Controller
                 conn = new DBConnection();
 
                 Guid orderId = Guid.NewGuid();
+                Order item = new Order();
+                item.OrderId = orderId;
+                item.ProductId = order.ProductId;
+                item.OrderStatus = order.OrderStatus;
+                item.OrderType = order.OrderType;
 
-                if (customerDAO.CustomerExists(order.OrderBy, conn) && order.OrderBy.ToString().Length == 36)
+                item.OrderBy = order.OrderBy;
+                item.OrderedOn = order.OrderedOn;
+                item.ShippedOn = order.ShippedOn;
+                item.IsActive = true;
+
+                if (orderDAO.OrderExists(item, conn))
                 {
-                    if (productDAO.ProductExists(order.ProductId, conn) && order.ProductId.ToString().Length == 36)
+                    message = "Order is already inserted.";
+                }
+                else
+                {
+                    if (customerDAO.CustomerExists(order.OrderBy, conn) && order.OrderBy.ToString().Length == 36)
                     {
-                        Order item = new Order();
-                        item.OrderId = orderId;
-                        item.ProductId = order.ProductId;
-                        item.OrderStatus = order.OrderStatus;
-                        item.OrderType = order.OrderType;
+                        if (productDAO.ProductExistsById(order.ProductId, conn) && order.ProductId.ToString().Length == 36)
+                        {
+                            
+                            orderDAO.InsertOrder(item, conn);
 
-                        item.OrderBy = order.OrderBy;
-                        item.OrderedOn = order.OrderedOn;
-                        item.ShippedOn = order.ShippedOn;
-                        item.IsActive = true;
-                        orderDAO.InsertOrder(item, conn);
-
-                        message = "Order inserted Successfully.Order Id is " + orderId;
+                            message = "Order inserted Successfully.Order Id is " + orderId;
+                        }
+                        else
+                        {
+                            message = "Please check the Product Id.";
+                        }
                     }
                     else
                     {
-                        message = "Please check the Product Id.";
+                        message = "Please check the customer Id.";
                     }
                 }
-                else 
-                {
-                    message = "Please check the customer Id.";
-                }
+
+                
                 
                 return message;
             }
@@ -79,26 +89,21 @@ namespace StoreAPICore.Controller
         }
         public DataTable GetActiveOrdersByCustomers(Guid customerId)
         {
-            
-            DataTable dataTable = new DataTable();
-            dataTable.Columns.Add("Data", typeof(DataTable));
-            dataTable.Columns.Add("Message", typeof(string));
-            
+            DataTable data = new DataTable();
+
             try
             {
                 conn = new DBConnection();
-                DataTable data = new DataTable();
+                
                 data = orderDAO.GetActiveOrdersByCustomer(customerId,conn);
-                message = "Successfully retrieved.";
-
-                dataTable.Rows.Add(data,message);
-                return dataTable;
+                return data;
             }
             catch (Exception exp)
             {
                 conn.Rollback();
                 message = exp.ToString();
-                dataTable.Rows.Add(null, message);
+                data.Columns.Add("Error",typeof(string));
+                data.Rows.Add(message);
                 throw;
             }
             finally

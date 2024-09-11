@@ -11,13 +11,14 @@ namespace StoreAPI.Controllers
     [ApiController]
     public class SupplierAPIController : ControllerBase
     {
-        [Route("api/v1/CreateSupplier")]
+        [Route("v1/CreateSupplier")]
         [HttpPost]
 
         public IActionResult CreateSupplier([FromBody] InputSupplier supplier)
         {
             SupplierController supplierController = ControllerFactory.CreateSupplierController();
-            return Ok(supplierController.CreateSupplierAccount(supplier));
+            var result = supplierController.CreateSupplierAccount(supplier);
+            return Ok(new { message = result });
         }
     }
 }

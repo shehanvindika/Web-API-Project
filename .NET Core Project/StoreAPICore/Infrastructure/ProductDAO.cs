@@ -12,7 +12,8 @@ namespace StoreAPICore.Infrastructure
     public interface ProductDAO
     {
         void InsertProduct(Product product,DBConnection dBConnection);
-        bool ProductExists(Guid ProductId, DBConnection dBConnection);
+        bool ProductExists(string ProductName, Guid SupplierId, DBConnection dBConnection);
+        bool ProductExistsById(Guid ProductId, DBConnection dBConnection);
     }
 
     public class ProductDAOImpl : ProductDAO
@@ -31,7 +32,27 @@ namespace StoreAPICore.Infrastructure
             dBConnection.cmd.ExecuteNonQuery();
         }
 
-        public bool ProductExists(Guid ProductId, DBConnection dBConnection)
+        public bool ProductExists(string ProductName,Guid SupplierId ,DBConnection dBConnection)
+        {
+            bool IsExists = false;
+            dBConnection.cmd.Parameters.Clear();
+            dBConnection.cmd.CommandType = CommandType.Text;
+            dBConnection.cmd.CommandText = "select * from Product where ProductName='" + ProductName + "' and SupplierId ='"+SupplierId+"'";
+            dBConnection.dr = dBConnection.cmd.ExecuteReader();
+
+            while (dBConnection.dr.Read())
+            {
+                if (dBConnection.dr.HasRows)
+                {
+                    IsExists = true;
+                }
+            }
+
+            dBConnection.dr.Close();
+            return IsExists;
+        }
+
+        public bool ProductExistsById(Guid ProductId, DBConnection dBConnection)
         {
             bool IsExists = false;
             dBConnection.cmd.Parameters.Clear();

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "qg++/4m3bTDruKJRuT6ViA1aJ3Xi/0MNHGppnhza+Q0cieUdiwKVnIo9UZygMh+MdnAtm2GIrg+eqjPSxvIoBA==",
+  "dgSpecHash": "cpVASZg3kZ98BabavHBLiCjG1pfdRQBzG+Az4YtVXUyE+kc3jx9UY+IuDyO8oNHb64y6YNnDaWmXWkT/6GxVHw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Administrator\\Desktop\\Data Capture Expert\\Assessment\\StoreAPICore\\StoreAPICore.csproj",
+  "projectFilePath": "C:\\Users\\Administrator\\Desktop\\New folder (2)\\Web-API-Project\\.NET Core Project\\StoreAPICore\\StoreAPICore.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
